@@ -1,0 +1,34 @@
+/Multiplication
+/01 C = 0
+/02 if A = 0 then go to line 06
+/03 C = C + B
+/04 A = A - 1
+/05 go to line 02
+/06 halt
+/4 times 3
+Clear
+Store Sum
+Input
+Store X
+Input
+Store counter
+Loop,       Load counter
+            Skipcond 400    /如果等于0，就跳过下一行
+            Jump times
+            Jump endAndOutput
+
+times,      Load Sum
+            Add X
+            Store Sum
+            Load counter
+            Subt One
+            Store counter
+            Jump Loop
+
+endAndOutput,   Load Sum
+                Output
+                Halt
+counter,    dec 0
+X,          dec 0
+Sum,        dec 0
+One,        dec 1

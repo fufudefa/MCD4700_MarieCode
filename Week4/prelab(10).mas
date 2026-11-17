@@ -1,0 +1,23 @@
+/Write a program in MERIE to add three numbers 
+/using subroutine (call the subroutine addThree). 
+Input
+Store X
+Input
+Store Y
+Input
+Store Z
+Jns addThree
+Load Sum
+Output
+Halt
+/subroutine
+addThree,   dec 0
+            Load X
+            Add Y
+            Add Z
+            Store Sum
+            JumpI addThree
+X,          dec 0
+Y,          dec 0
+Z,          dec 0
+Sum,        dec 0

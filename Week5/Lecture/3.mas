@@ -1,0 +1,26 @@
+/Assuming you have a list of numbers called ListNumbers, 
+/write a MARIE program that reads and displays all the numbers 
+/from the list and stops as soon as it encounters the number 0.
+/Ex,
+/ListNumbers = {1, 44, -3, 22, 0, 55}
+Load StartAddr
+Store pointer
+
+Loop,   LoadI pointer
+        Skipcond 0c00     / 如果不等于0，就跳过下一行
+        Halt
+        Output
+        Load pointer
+        Add One
+        Store pointer
+        Jump Loop
+
+StartAddr,      ADR ListNumbers
+pointer,        hex 0
+ListNumbers,    dec 1
+                dec 44
+                dec -3
+                dec 22
+                dec 0
+                dec 55
+One,            dec 1

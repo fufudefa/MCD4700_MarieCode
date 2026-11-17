@@ -1,0 +1,37 @@
+/Assuming you have a list of numbers called 
+/ListNumbers with a fixed length of 8, 
+/write a MARIE program that reads and 
+/displays all the numbers from the list
+/Ex,
+/ListNumbers = {1, 44, -3, 22, 0, 55, 5, -100}
+Load StartAddr
+Store pointer
+
+
+check,  Load counter
+        skipcond 400            / 如果等于0，就跳过下一行       
+        Jump Loop
+        Halt
+Loop,   LoadI pointer
+        Output
+        Load pointer
+        Add One
+        Store pointer
+        Load counter
+        Subt One
+        Store counter
+        Jump check
+
+StartAddr,      Adr listNumbers
+One,            dec 1
+pointer,        hex 0
+counter,        dec 8
+listNumbers,    dec 1
+                dec 44
+                dec -3
+                dec 22
+                dec 0
+                dec 55
+                dec 5
+                dec -100
+                hex 0

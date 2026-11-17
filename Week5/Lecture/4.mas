@@ -1,0 +1,34 @@
+/Assuming you have a list of numbers called ListNumbers, 
+/write a MARIE program that reads and displays all the numbers from the list 
+/and stops as soon as it encounters the number 5 (5 is not included).
+/Ex,
+/ListNumbers = {1, 44, -3, 22, 0 , 55, 5}
+Load StartAddr
+Store pointer
+
+Loop,   LoadI pointer
+        Jns check
+        LoadI pointer
+        Output
+        Load pointer
+        Add One
+        Store pointer
+        Jump Loop
+
+check,  dec 0
+        Subt Five
+        Skipcond 400        /如果等于 0，就跳过下一行
+        JumpI check
+        Halt
+
+StartAddr,      ADR ListNumbers
+pointer,        hex 0
+ListNumbers,    dec 1
+                dec 44
+                dec -3
+                dec 22
+                dec 0
+                dec 55
+                dec 5   / end of string
+One,            dec 1
+Five,           dec 5

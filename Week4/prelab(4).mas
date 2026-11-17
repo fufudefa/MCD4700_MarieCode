@@ -1,0 +1,10 @@
+/Write a program in MARIE to add three numbers.
+Load X
+Add Y
+Add Z
+Store Sum
+Halt
+X,      dec 1
+Y,      dec 2
+Z,      dec 3
+Sum,    dec 0

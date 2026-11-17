@@ -1,0 +1,22 @@
+Loop,   LoadI Start
+        SkipCond 800
+        Jump End
+        Output
+        Load Start
+        Add One
+        Store Start
+        Jump Loop
+End,    Halt
+
+
+Start, Adr String
+String, Hex 57 /W
+        Hex 41 /A
+        Hex 4E /N
+        Hex 53 /S
+        Hex 55 /U
+        Hex 46 /F
+        Hex 45 /E
+        Hex 49 /I
+        Hex 0  /end of string
+One,    Dec 1  /1

@@ -1,0 +1,16 @@
+/Write a MARIE program to display 'N' if the value of R is less than zero. 
+/Otherwise, display 'P'.
+/如果 R < 0, 显示 N。其他情况显示 P
+Load R
+SkipCond 000        / 如果小于0，就跳过
+Jump displayP
+Jump displayN
+displayP,   Load P
+            Output
+            Halt
+displayN,   Load N
+            Output
+            Halt
+R,      dec -10
+N,      hex 4E
+P,      hex 50

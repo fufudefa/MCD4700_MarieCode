@@ -1,0 +1,13 @@
+/Write a MARIE program to input any data from the keyboard 
+/and display in the MARIE simulator output window
+/Modify your program to store the input data in “numIn” and add ‘1’ to it 
+/before displaying it in the output. 
+/Please input decimal numbers (from the keyboard) for this task.
+Input
+Store numIn
+Add One
+Output
+Halt
+
+numIn,      DEC 0
+One,        DEC 1

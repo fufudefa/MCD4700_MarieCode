@@ -1,0 +1,21 @@
+/Further modify your program by adding jump 
+/instructions to repeat the data input, 
+/modify and display activities endlessly.
+/Using “skipcond” instruction, 
+/exit the program when the user inputs data ‘0’.
+/接收输入 -> 存入变量 -> 加 1 -> 输出
+
+Check,  Input
+        SkipCond 400    /如果输入为0，就跳过下面的jume loop,直接end
+        Jump Loop
+        Jump End
+
+Loop,   Store numIn
+        Add One
+        Output
+        Jump Check
+
+End,    Halt
+
+numIn,      DEC 0
+One,        DEC 1

@@ -1,0 +1,24 @@
+/Write a MARIE program using indirect addressing (LoadI) 
+/to load characters one-by-one into the accumulator (AC) and display them. 
+/Stop the program when you get the number ZERO.
+Loop,       LoadI myAdd
+            skipcond 400    /如果是0，跳过下一行
+            Jump print
+            Halt
+print,      Output
+            Load myAdd
+            Add One
+            Store myAdd
+            Jump Loop
+
+One,        Hex 1
+myAdd,      ADR myName      /地址指针
+myName,     Hex 04A   /J
+            Hex 06F   /o
+            Hex 068   /h
+            Hex 06E   /n
+            Hex 04E   /N
+            Hex 06F   /o
+            Hex 061   /a
+            Hex 068   /h
+            Hex 0     /0，退出字符

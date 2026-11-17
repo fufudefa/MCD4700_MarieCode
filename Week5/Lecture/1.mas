@@ -1,0 +1,12 @@
+/Write a program in MARIE to display “N” 
+/if the value of R is less than zero (Negative).
+Loop,   Load R
+        Skipcond 000       / 如果小于0，就跳过下一行
+        Halt
+        Jump displayN
+displayN,   Load N
+            Output
+            Halt
+
+R,      dec -5
+N,      hex 4E

@@ -1,0 +1,41 @@
+/然后将乘法程序转换为子程序，
+/并创建一个主程序来接受用户输入的两个数字，
+/如果其中任何一个数字为“零”则退出程序，否则调用子程序执行乘法运算并显示结果。
+Clear
+Store Sum
+
+Input
+skipcond 400    /如果等于0，就跳过下一行
+Jump checkY
+Jump End
+checkY,     Store X
+            Input
+            skipcond 400    /如果等于0，就跳过下一行
+            Jump storeY
+            Jump End
+storeY,     Store counter
+            Jns times
+            Load Sum
+            Output
+            Halt
+
+/subroutine
+times,          hex 0
+checkCounter,   Load counter
+                Skipcond 400    /如果等于0，就跳过下一行
+                Jump process
+                JumpI times
+process,        Load Sum
+                Add X
+                Store Sum
+                Load counter
+                Subt One
+                Store counter
+                Jump checkCounter
+
+End,        Halt
+
+counter,    dec 0
+X,          dec 0
+Sum,        dec 0
+One,        dec 1

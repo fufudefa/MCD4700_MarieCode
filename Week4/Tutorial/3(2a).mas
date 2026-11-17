@@ -1,0 +1,28 @@
+/if-then-else
+/if (X > Y)
+/    X = X + X
+/else
+/    Y = Y + Y
+Compare,    Load X
+            Subt Y  / x - y > 0, x > y, jump to doubleX
+            SkipCond 800
+            Jump doubleY
+            Jump doubleX
+
+/subroutine
+doubleX,    Load X
+            Add X
+            Store X
+            Output
+            Jump End
+
+doubleY,    Load Y
+            Add Y
+            Store Y
+            Output
+            Jump End
+
+End,        Halt
+
+X,      dec 10
+Y,      dec 5

@@ -1,0 +1,42 @@
+/Write a MARIE program using indirect addressing (LoadI) to load 
+/characters one-by-one into the accumulator (AC) and display them. 
+/Stop the program when you get the character dot ‘.’ (ASCII value 02E).
+/Convert above MARIE program to a subroutine.
+/main
+Jns stringOut
+Halt
+/subroutine
+stringOut,  Hex 0
+            LoadI myAdd
+            Subt Dot
+            Skipcond 400    /如果等于0，就跳过下一行
+            Jump beginOut
+            JumpI stringOut
+beginOut,   LoadI myAdd
+            Output
+            Load myAdd
+            Add One
+            Store myAdd
+            Jump stringOut
+
+One,      HEX 1
+myAdd,    ADR myName
+myName,   HEX 053   / S
+          HEX 075   / u
+          HEX 066   / f
+          HEX 065   / e
+          HEX 069   / i
+Space,    HEX 020   / space
+          HEX 057   / W
+          HEX 061   / a
+          HEX 06E   / n
+          HEX 00A   / new line
+          HEX 033   / 3
+          HEX 036   / 6
+          HEX 038   / 8
+          HEX 038   / 8
+          HEX 036   / 6
+          HEX 035   / 5
+          HEX 038   / 8
+          HEX 030   / 0
+Dot,      HEX 02E   / '.'

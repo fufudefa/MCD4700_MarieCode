@@ -1,0 +1,16 @@
+/Write a MARIE program to input decimal numbers from the keyboard 
+/and store them starting from memory location “HEX 020.” 
+/The program should terminate when the user enters a number ‘0’. 
+/Note: one decimal number (e.g. 14) to be stored in one memory location.
+Loop,       Input
+            Skipcond 400    /如果用户输入等于0，就跳过下一行
+            Jump storeData  /去存储数据
+            Halt
+storeData,  StoreI pointer  /把数据存进指针指向的第一个地址
+            Load pointer    /加载指针里存的地址值
+            Add One         /把指针存的地址值 + 1
+            Store pointer   /把更新后的地址存进指针
+            Jump Loop
+
+One,        hex 1
+pointer,    hex 020

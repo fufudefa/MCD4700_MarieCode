@@ -1,0 +1,21 @@
+/Write a program to enter many values and sum them, stop when 0 is entered.
+/用一个记事本，记录直接input进ac里的值。如果input = ac = 0，就stop
+/遇到 0 停止后，只输出最终的总和
+Loop,   Input
+        Store Tem
+        Load Sum
+        Add Tem
+        Store Sum
+        Jns Check
+        Jump Loop
+
+Check,  dec 0
+        Load Tem
+        SkipCond 400
+        JumpI Check
+        Load Sum
+        Output
+        Halt
+
+Tem,    dec 0
+Sum,    dec 0

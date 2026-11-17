@@ -1,0 +1,10 @@
+/Write a MARIE program to read a number from memory, 
+/double it and display the new number. 
+Load X
+Add X
+Store newX
+Output
+Halt
+
+X,      dec 10
+newX,   dec 0

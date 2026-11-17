@@ -1,0 +1,9 @@
+Load A
+Add B
+Subt C
+Store Z
+Halt
+A, DEC 10
+B, DEC 3
+C, DEC -20
+Z, DEC 0

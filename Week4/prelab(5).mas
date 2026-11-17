@@ -1,0 +1,27 @@
+/Implement a simple subroutine called swap 
+/that swap the values of two variables with each other, 
+/i.e., it takes the values in the memory location X and Y, 
+/swap them, and returns to where the original program left off. 
+Load X
+Output
+Load Y
+Output
+Jns swap
+Load X
+Output
+Load Y
+Output
+Halt
+
+swap,   dec 0
+        Load Y
+        Store Tem   /Store Y
+        Load X
+        Store Y
+        Load Tem    /Store Y
+        Store X
+        JumpI swap
+
+X,      dec 10
+Y,      dec 20
+Tem,    dec 0

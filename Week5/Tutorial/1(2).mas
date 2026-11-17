@@ -1,0 +1,25 @@
+/Basic Subroutine (Part 1)
+/Convert the code, from the previous task, to a subroutine, 
+/and create a main program to accept any number from the user (via keyboard), 
+/if it is “zero” exit the program, 
+/otherwise call the subroutine to double it and display.
+ 
+/main program
+Loop,   Input
+        Store X
+        SkipCond 400    /等于0时，跳过下一个指令
+        Jump process
+        Halt
+
+process,    Jns double
+            Jump Loop
+
+/subroutine
+double,     dec 0
+            Load X
+            Add X
+            Store X
+            Output
+            JumpI double
+
+X,      dec 0

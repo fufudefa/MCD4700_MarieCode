@@ -1,0 +1,29 @@
+/Write a MARIE program to load the characters (into the AC) one-by-one 
+/using indirect addressing (LoadI) 
+/and modify the character by manipulating the ASCII code (adding ‘1’ to the ASCII value) 
+/and store the character back into the same memory location using StoreI command. 
+/Verify the changed ASCII values in the MARIE memory.
+/loadi进具体的字符值，然后加一，然后存储到原先的地址中，最后输出
+Loop,       LoadI myAdd
+            skipcond 400    /如果是0，跳过下一行
+            Jump modify
+            Halt
+modify,     Add One
+            StoreI myAdd
+            Output
+            Load myAdd
+            Add One
+            Store myAdd
+            Jump Loop
+
+One,        Hex 1
+myAdd,      ADR myName      /地址指针
+myName,     Hex 04A   /J
+            Hex 06F   /o
+            Hex 068   /h
+            Hex 06E   /n
+            Hex 04E   /N
+            Hex 06F   /o
+            Hex 061   /a
+            Hex 068   /h
+            Hex 0     /0，退出字符

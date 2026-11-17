@@ -1,0 +1,15 @@
+/Write a program to display the values from 10 to 0.
+Loop,   Load ValueStart
+        SkipCond 800        /If AC > 0, is value > 0, skip print 0
+        Jump OutputZero
+        Output
+        Load ValueStart
+        Subt One
+        Store ValueStart
+        Jump Loop
+
+OutputZero,     Output
+End,            Halt
+
+ValueStart,     dec 10
+One,            dec 1

@@ -1,0 +1,22 @@
+Input
+Store DoubleArg
+Jns Double
+
+Load DoubleArg
+Output
+
+Halt
+
+Loop,   Load DoubleArg
+        SkipCond 800
+        Jump End
+        Output
+        Load DoubleArg
+        Add DoubleArg
+        Store DoubleArg
+        Jump Loop
+End,    Halt
+
+
+DoubleArg, dec 0
+Double,  hex 0

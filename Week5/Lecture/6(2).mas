@@ -1,0 +1,29 @@
+/Write a program in MARIE to display the digit '1' using ASCII art.
+Load White      / 将十六进制 FFFF (白色) 加载到累加器
+
+/ ---- 绘制主干 (第8列) ----
+Store 0F28      / 第2行
+Store 0F38      / 第3行
+Store 0F48      / 第4行
+Store 0F58      / 第5行
+Store 0F68      / 第6行
+Store 0F78      / 第7行
+Store 0F88      / 第8行
+Store 0F98      / 第9行
+Store 0FA8      / 第10行
+Store 0FB8      / 第11行
+Store 0FC8      / 第12行 (与底座中心重合)
+
+/ ---- 绘制左侧小钩 ----
+Store 0F37      / 第3行，第7列
+Store 0F46      / 第4行，第6列
+
+/ ---- 绘制底座 (第12行) ----
+Store 0FC6      / 第12行，第6列
+Store 0FC7      / 第12行，第7列
+Store 0FC9      / 第12行，第9列
+Store 0FCA      / 第12行，第10列
+
+Halt
+
+White, HEX FFFF

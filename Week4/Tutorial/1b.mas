@@ -1,0 +1,21 @@
+/Write a program to display the values from 1 to 10.
+Loop,   Load Value
+        Output
+        Jns Check       /value - 10，如果等于0，说明是10。如果小于0，说明没到10.只要大于0，说明10到了
+        Load Value
+        Add One
+        Store Value
+        Jump Loop
+
+OutputZero,     Output
+End,            Halt
+
+Check,  Dec 0
+        Load Value
+        Subt Ten
+        SkipCond 000    /ac < 0, 不 end
+        Jump End
+        JumpI Check
+Value,     dec 1
+One,       dec 1
+Ten,       dec 10

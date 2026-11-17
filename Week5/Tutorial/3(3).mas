@@ -1,0 +1,30 @@
+/Extend your program to load and display the numbers (starting from memory location HEX 020). 
+/Continuing from part (a), once the user enters a number ‘0’, 
+/your program should terminate the number entry 
+/and load these numbers from memory to display one after the other in the output window.
+Loop,       Input
+            Skipcond 400    /如果用户输入等于0，就跳过下一行
+            Jump storeData  /去存储数据
+            Jump storeZero  /去在指针末尾存0
+storeData,  StoreI pointer  /把数据存进指针指向的第一个地址
+            Load pointer    /加载指针里存的地址值
+            Add One         /把指针存的地址值 + 1
+            Store pointer   /把更新后的地址存进指针
+            Jump Loop
+storeZero,  Load Zero
+            StoreI pointer
+            Load StartAddr  /重置指针到最开始的地址
+            Store pointer
+outputNum,  LoadI pointer
+            Skipcond 400    /如果pointer里面的东西等于0，跳过下一行
+            Jump outputNow
+            Halt
+outputNow,  Output
+            Load pointer
+            Add One
+            Store pointer
+            Jump outputNum
+Zero,       hex 0
+One,        hex 1
+pointer,    hex 020
+StartAddr,  hex 020

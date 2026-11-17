@@ -1,0 +1,22 @@
+/while-do
+
+/X = 1
+/while (X < 10) do
+/   X = X + 1
+/Endwhile
+Loop,       Load X
+            Subt Ten
+            SkipCond 000    /如果小于零，就跳过退出程序，去加一
+            Halt
+            Jump AddOne
+
+
+AddOne,     Load X
+            Add One
+            Store X
+            Output
+            Jump Loop
+
+X,          dec 1
+One,        dec 1
+Ten,        dec 10
