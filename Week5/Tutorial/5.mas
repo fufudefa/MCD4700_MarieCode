@@ -7,7 +7,7 @@ Jns stringOut
 Halt
 /subroutine
 stringOut,  Hex 0
-            LoadI myAdd
+Loop,       LoadI myAdd
             Subt Dot
             Skipcond 400    /如果等于0，就跳过下一行
             Jump beginOut
@@ -17,7 +17,7 @@ beginOut,   LoadI myAdd
             Load myAdd
             Add One
             Store myAdd
-            Jump stringOut
+            Jump Loop
 
 One,      HEX 1
 myAdd,    ADR myName
